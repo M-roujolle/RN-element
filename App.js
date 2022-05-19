@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { Appbar, Card, Avatar, BottomNavigation, Provider as PaperProvider } from 'react-native-paper';
+import MyComponent from './src/component/MyComponent';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+const App = () => (
+
+  <PaperProvider>
+
+    <Appbar.Header>
+      <Appbar.Content title="Activity" subtitle={'Tracker'} />
+      <Avatar.Image size={40} source={require('./assets/img/photo-profil_301783868.jpg')} />
+    </Appbar.Header>
+
+    <MyComponent />
+
+  </PaperProvider>
+
+)
+
+export default App
+
